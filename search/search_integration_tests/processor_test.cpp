@@ -636,7 +636,7 @@ UNIT_CLASS_TEST(ProcessorTest, TestRankingInfo_PureCategory)
 
   /// @todo We don't match cuisines if input query is category.
   /// Good news that "ice cream (gelato)" is the only category like this now.
-  /// https://github.com/organicmaps/organicmaps/issues/2961
+  /// https://github.com/kaidonav/kaidonav/issues/2961
   Rules const rules{ExactMatch(wonderlandId, cafe1),
                     ExactMatch(wonderlandId, cafe2),
                     ExactMatch(wonderlandId, cafe4)};
@@ -2781,7 +2781,7 @@ UNIT_CLASS_TEST(ProcessorTest, ViewportFilter)
     params.m_mode = Mode::Viewport;
 
     /// @todo If we gonna show "relaxed" street result, will be a lot of dummies:
-    /// https://github.com/organicmaps/organicmaps/issues/4190
+    /// https://github.com/kaidonav/kaidonav/issues/4190
 
     // |street23| should not appear in viewport search because it has 2 unmatched tokens.
     // |street8| has 1 unmatched token.
@@ -3294,7 +3294,7 @@ UNIT_CLASS_TEST(ProcessorTest, TestRankingInfo_MultipleOldNames)
 }
 
 /// @todo We are not ready for this test yet.
-/// https://github.com/organicmaps/organicmaps/issues/2961
+/// https://github.com/kaidonav/kaidonav/issues/2961
 /*
 UNIT_CLASS_TEST(ProcessorTest, BurgerStreet)
 {

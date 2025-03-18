@@ -815,7 +815,7 @@ void Ranker::UpdateResults(bool lastUpdate)
   if (m_params.m_viewportSearch)
   {
     // https://github.com/organicmaps/organicmaps/issues/5566
-    /// @todo https://github.com/organicmaps/organicmaps/issues/5251 Should review later
+    /// @todo https://github.com/kaidonav/kaidonav/issues/5251 Should review later
     // https://github.com/organicmaps/organicmaps/issues/4325
     // https://github.com/organicmaps/organicmaps/issues/4190
     // https://github.com/organicmaps/organicmaps/issues/3677

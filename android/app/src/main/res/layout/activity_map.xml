@@ -54,5 +54,5 @@
     android:id="@+id/place_page_container_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name="app.organicmaps.widget.placepage.PlacePageController" />
+    android:name="app.kaidonav.widget.placepage.PlacePageController" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

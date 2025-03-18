@@ -15,7 +15,7 @@
 
 namespace kml
 {
-/// @note Important! Should be synced with android/app/src/main/java/app/organicmaps/bookmarks/data/Icon.java
+/// @note Important! Should be synced with android/app/src/main/java/app/kaidonav/bookmarks/data/Icon.java
 enum class PredefinedColor : uint8_t
 {
   None = 0,
@@ -146,7 +146,7 @@ inline std::string DebugPrint(CompilationType compilationType)
   UNREACHABLE();
 }
 
-/// @note Important! Should be synced with android/app/src/main/java/app/organicmaps/bookmarks/data/Icon.java
+/// @note Important! Should be synced with android/app/src/main/java/app/kaidonav/bookmarks/data/Icon.java
 enum class BookmarkIcon : uint16_t
 {
   None = 0,

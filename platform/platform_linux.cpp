@@ -103,10 +103,10 @@ Platform::Platform()
     std::string const dirsToScan[] = {
         "./data",  // symlink in the current folder
         "../data",  // 'build' folder inside the repo
-        JoinPath(*execDir, "..", "organicmaps", "data"),  // build-omim-{debug,release}
+        JoinPath(*execDir, "..", "kaidonav", "data"),  // build-omim-{debug,release}
         JoinPath(*execDir, "..", "share"),  // installed version with packages
         JoinPath(*execDir, "..", "OMaps"),  // installed version without packages
-        JoinPath(*execDir, "..", "share", "organicmaps", "data"),  // flatpak-build
+        JoinPath(*execDir, "..", "share", "kaidonav", "data"),  // flatpak-build
     };
     for (auto const & dir : dirsToScan)
     {

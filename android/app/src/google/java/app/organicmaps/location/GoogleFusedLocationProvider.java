@@ -1,8 +1,8 @@
-package app.organicmaps.location;
+package app.kaidonav.location;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
-import static app.organicmaps.util.concurrency.UiThread.runLater;
+import static app.kaidonav.util.concurrency.UiThread.runLater;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -26,8 +26,8 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.location.Priority;
 import com.google.android.gms.location.SettingsClient;
 
-import app.organicmaps.util.LocationUtils;
-import app.organicmaps.util.log.Logger;
+import app.kaidonav.util.LocationUtils;
+import app.kaidonav.util.log.Logger;
 
 class GoogleFusedLocationProvider extends BaseLocationProvider
 {

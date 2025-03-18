@@ -303,7 +303,7 @@ string XMLFeature::GetHouse() const { return GetTagValue(kHouseNumber); }
 
 void XMLFeature::SetHouse(string const & house) { SetTagValue(kHouseNumber, house); }
 
-/// https://github.com/organicmaps/organicmaps/issues/1118
+/// https://github.com/kaidonav/kaidonav/issues/1118
 /// @todo Make full diet:xxx support.
 /// @{
 string XMLFeature::GetCuisine() const
