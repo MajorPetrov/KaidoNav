@@ -1,12 +1,12 @@
-package app.organicmaps.location;
+package app.kaidonav.location;
 
 import android.content.Context;
 
 import androidx.annotation.NonNull;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
-import app.organicmaps.util.Config;
-import app.organicmaps.util.log.Logger;
+import app.kaidonav.util.Config;
+import app.kaidonav.util.log.Logger;
 
 public class LocationProviderFactory
 {

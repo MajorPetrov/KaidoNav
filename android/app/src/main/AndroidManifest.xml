@@ -74,6 +74,7 @@
       android:fullBackupContent="@xml/backup_content"
       android:dataExtractionRules="@xml/backup_content_v31"
       android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
       android:label="@string/app_name"
       android:localeConfig="@xml/locales_config"
       android:theme="@style/MwmTheme"
@@ -85,7 +86,7 @@
 
     <!-- Allows for config and orientation change without killing/restarting main activity -->
     <activity
-      android:name="app.organicmaps.SplashActivity"
+      android:name="app.kaidonav.SplashActivity"
       android:configChanges="orientation|screenSize|smallestScreenSize|density|screenLayout|uiMode|keyboard|keyboardHidden|navigation"
       android:screenOrientation="fullUser"
       android:exported="true">
@@ -345,14 +346,14 @@
     </activity>
 
     <activity
-        android:name="app.organicmaps.DownloadResourcesLegacyActivity"
+        android:name="app.kaidonav.DownloadResourcesLegacyActivity"
         android:configChanges="orientation|screenLayout|screenSize"
         android:screenOrientation="fullUser"/>
 
     <activity-alias
-      android:name="app.organicmaps.DownloadResourcesActivity"
+      android:name="app.kaidonav.DownloadResourcesActivity"
       android:label="@string/app_name"
-      android:targetActivity="app.organicmaps.SplashActivity"
+      android:targetActivity="app.kaidonav.SplashActivity"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
@@ -361,7 +362,7 @@
     </activity-alias>
 
     <activity
-        android:name="app.organicmaps.MwmActivity"
+        android:name="app.kaidonav.MwmActivity"
         android:launchMode="singleTask"
         android:configChanges="uiMode"
         android:screenOrientation="fullUser"
@@ -373,96 +374,96 @@
         android:targetActivity=".SplashActivity" />
 
     <activity
-        android:name="app.organicmaps.downloader.DownloaderActivity"
+        android:name="app.kaidonav.downloader.DownloaderActivity"
         android:configChanges="orientation|screenLayout|screenSize"
         android:screenOrientation="fullUser"
         android:label="@string/download_maps"
-        android:parentActivityName="app.organicmaps.MwmActivity"
+        android:parentActivityName="app.kaidonav.MwmActivity"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
-        android:name="app.organicmaps.search.SearchActivity"
+        android:name="app.kaidonav.search.SearchActivity"
         android:configChanges="orientation|screenLayout|screenSize"
         android:screenOrientation="fullUser"
         android:label="@string/search_map"
-        android:parentActivityName="app.organicmaps.MwmActivity"
+        android:parentActivityName="app.kaidonav.MwmActivity"
         android:windowSoftInputMode="stateVisible|adjustResize" />
 
     <activity
-        android:name="app.organicmaps.settings.SettingsActivity"
+        android:name="app.kaidonav.settings.SettingsActivity"
         android:configChanges="orientation|screenLayout|screenSize"
         android:screenOrientation="fullUser"
         android:label="@string/settings"
-        android:parentActivityName="app.organicmaps.MwmActivity" />
+        android:parentActivityName="app.kaidonav.MwmActivity" />
 
     <activity
-        android:name="app.organicmaps.help.HelpActivity"
+        android:name="app.kaidonav.help.HelpActivity"
         android:label="@string/about_menu_title"
-        android:parentActivityName="app.organicmaps.MwmActivity"
+        android:parentActivityName="app.kaidonav.MwmActivity"
         android:exported="false">
       <intent-filter>
-        <action android:name="app.organicmaps.help.HelpActivity" />
+        <action android:name="kaidonav.help.HelpActivity" />
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </activity>
 
     <activity
-        android:name="app.organicmaps.bookmarks.BookmarkCategoriesActivity"
+        android:name="app.kaidonav.bookmarks.BookmarkCategoriesActivity"
         android:configChanges="orientation|screenLayout|screenSize"
         android:screenOrientation="fullUser"
         android:label="@string/bookmarks_and_tracks"
-        android:parentActivityName="app.organicmaps.MwmActivity"
+        android:parentActivityName="app.kaidonav.MwmActivity"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
-        android:name="app.organicmaps.bookmarks.BookmarkListActivity"
+        android:name="app.kaidonav.bookmarks.BookmarkListActivity"
         android:configChanges="orientation|screenLayout|screenSize"
         android:screenOrientation="fullUser"
         android:label="@string/bookmarks"
-        android:parentActivityName="app.organicmaps.bookmarks.BookmarkCategoriesActivity"
+        android:parentActivityName="app.kaidonav.bookmarks.BookmarkCategoriesActivity"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
-        android:name="app.organicmaps.editor.EditorActivity"
+        android:name="app.kaidonav.editor.EditorActivity"
         android:configChanges="orientation|screenLayout|screenSize"
         android:screenOrientation="fullUser"
         android:label="@string/edit_place"
-        android:parentActivityName="app.organicmaps.MwmActivity"
+        android:parentActivityName="app.kaidonav.MwmActivity"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
-        android:name="app.organicmaps.editor.ProfileActivity"
-        android:parentActivityName="app.organicmaps.settings.SettingsActivity" />
+        android:name="app.kaidonav.editor.ProfileActivity"
+        android:parentActivityName="app.kaidonav.settings.SettingsActivity" />
 
     <activity
-        android:name="app.organicmaps.editor.FeatureCategoryActivity"
-        android:parentActivityName="app.organicmaps.MwmActivity"
+        android:name="app.kaidonav.editor.FeatureCategoryActivity"
+        android:parentActivityName="app.kaidonav.MwmActivity"
         android:windowSoftInputMode="adjustResize" />
 
     <activity
-        android:name="app.organicmaps.editor.ReportActivity"
-        android:parentActivityName="app.organicmaps.MwmActivity" />
+        android:name="app.kaidonav.editor.ReportActivity"
+        android:parentActivityName="app.kaidonav.MwmActivity" />
 
     <activity
-        android:name="app.organicmaps.editor.OsmLoginActivity"
-        android:parentActivityName="app.organicmaps.MwmActivity" />
+        android:name="app.kaidonav.editor.OsmLoginActivity"
+        android:parentActivityName="app.kaidonav.MwmActivity" />
 
     <activity
-      android:name="app.organicmaps.bookmarks.BookmarkCategorySettingsActivity"
+      android:name="app.kaidonav.bookmarks.BookmarkCategorySettingsActivity"
       android:label="@string/edit"
       android:windowSoftInputMode="stateVisible"/>
     <activity
-      android:name="app.organicmaps.widget.placepage.PlaceDescriptionActivity"
+      android:name="app.kaidonav.widget.placepage.PlaceDescriptionActivity"
       android:label="@string/place_description_title"/>
     <activity
-      android:name="app.organicmaps.settings.DrivingOptionsActivity"
+      android:name="app.kaidonav.settings.DrivingOptionsActivity"
       android:label="@string/driving_options_title"/>
     <activity
-        android:name="app.organicmaps.MapPlaceholderActivity"/>
+        android:name="app.kaidonav.MapPlaceholderActivity"/>
     <activity
-        android:name="app.organicmaps.car.screens.permissions.RequestPermissionsActivity"/>
+        android:name="app.kaidonav.car.screens.permissions.RequestPermissionsActivity"/>
     <service
-        android:name="app.organicmaps.car.CarAppService"
+        android:name="app.kaidonav.car.CarAppService"
         android:exported="true"
         tools:ignore="ExportedService">
       <intent-filter>

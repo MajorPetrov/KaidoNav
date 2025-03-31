@@ -65,14 +65,14 @@ Platform::Platform()
       m_resourcesDir + "../../../data/",
       // Check development environment without a symlink but with a git repo.
       m_resourcesDir + "../../../../omim/data/",
-      m_resourcesDir + "../../../../organicmaps/data/",
+      m_resourcesDir + "../../../../kaidonav/data/",
       // Working directory is set to the data folder or any project's subfolder.
       currentDir + "/../data",
       // Working directory is set to the project's root.
       currentDir + "/data",
       // Working directory is set to the build folder with binaries.
       currentDir + "/../omim/data",
-      currentDir + "/../organicmaps/data",
+      currentDir + "/../kaidonav/data",
     };
     // Find the writable path.
     for (auto const & path : paths)
@@ -88,7 +88,7 @@ Platform::Platform()
     // a customized working directory.
     if (m_writableDir.empty())
     {
-      for (char const * keyword : {"/omim/", "/organicmaps/"})
+      for (char const * keyword : {"/omim/", "/kaidonav/"})
       {
         if (auto const p = currentDir.rfind(keyword); p != std::string::npos)
         {

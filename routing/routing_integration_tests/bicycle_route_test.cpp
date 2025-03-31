@@ -94,7 +94,7 @@ UNIT_TEST(NetherlandsAmsterdamBicycleYes)
 {
   // Test that a highway=unclassified gets a significant boost due to presence of bicycle=yes tag.
   /// @todo(pastk): it shouldn't as there is no cycling infra (cycleway:both=no https://www.openstreetmap.org/way/214196820)
-  /// and bicycle=yes means "its legal", not "its fast", see https://github.com/organicmaps/organicmaps/issues/9593
+  /// and bicycle=yes means "its legal", not "its fast", see https://github.com/kaidonav/kaidonav/issues/9593
   TRouteResult const routeResult = CalculateRoute(GetVehicleComponents(VehicleType::Bicycle),
                      mercator::FromLatLon(52.32872, 5.07527), {0.0, 0.0},
                      mercator::FromLatLon(52.33853, 5.08941));
@@ -125,7 +125,7 @@ UNIT_TEST(RussiaMoscowKashirskoe16ToCapLongRoute)
 UNIT_TEST(Germany_UseServiceCountrysideRoads)
 {
   /// @todo(pastk): long service countryside roads is a mismapping probably.
-  /// https://github.com/organicmaps/organicmaps/pull/9692#discussion_r1850558462
+  /// https://github.com/kaidonav/kaidonav/pull/9692#discussion_r1850558462
   // Goes by smaller roads, including service ones. Also avoids extra 60m uphill
   // of the secondary road route. Most similar to Valhalla, but 2km shorter.
   // https://github.com/organicmaps/organicmaps/issues/6027
@@ -217,7 +217,7 @@ UNIT_TEST(Lithuania_Avoid_Ferry_Long_Route)
   // https://www.openstreetmap.org/directions?engine=graphhopper_bicycle&route=55.340%2C21.459%3B55.715%2C21.135
   // OM uses a much shorter (56km vs 64km) route with bicycle=yes tracks and a short path section.
   /// @todo(pastk): the route goes through a landuse=military briefly and OM doesn't account for that.
-  /// And too much preference is given to bicycle=yes track, see https://github.com/organicmaps/organicmaps/issues/9593
+  /// And too much preference is given to bicycle=yes track, see https://github.com/kaidonav/kaidonav/issues/9593
   integration::CalculateRouteAndTestRouteLength(
       integration::GetVehicleComponents(VehicleType::Bicycle),
       mercator::FromLatLon(55.3405073, 21.4595925), {0., 0.},
@@ -384,7 +384,7 @@ UNIT_TEST(Germany_Use_Bicycle_Track)
 {
   // Avoid primary and prefer smaller roads and tracks with bicycle=yes.
   /// @todo Still prefers a no-cycling-infra but bicycle=yes secondary rather than a paved track,
-  /// see https://github.com/organicmaps/organicmaps/issues/1201#issuecomment-946042937
+  /// see https://github.com/kaidonav/kaidonav/issues/1201#issuecomment-946042937
   CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
       mercator::FromLatLon(48.420723, 9.90350146), {0.0, 0.0},
       mercator::FromLatLon(48.4080367, 9.86597073), 3778.41 /* expectedRouteMeters */);

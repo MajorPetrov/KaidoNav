@@ -898,7 +898,7 @@ BOOST_AUTO_TEST_CASE(OpeningHoursMonthdayRanges_TestParseUnparse)
 BOOST_AUTO_TEST_CASE(OpeningHoursYearRanges_TestParseUnparse)
 {
   /// @todo Single year was removed here:
-  /// https://github.com/organicmaps/organicmaps/commit/ebe26a41da0744b3bc81d6b213406361f14d39b2
+  /// https://github.com/kaidonav/kaidonav/commit/ebe26a41da0744b3bc81d6b213406361f14d39b2
   /*
   {
     auto const rule = "1995";
@@ -1302,7 +1302,7 @@ BOOST_AUTO_TEST_CASE(OpeningHours_TestIsActive)
   }
 
   /// @todo Single year was removed here:
-  /// https://github.com/organicmaps/organicmaps/commit/ebe26a41da0744b3bc81d6b213406361f14d39b2
+  /// https://github.com/kaidonav/kaidonav/commit/ebe26a41da0744b3bc81d6b213406361f14d39b2
   /*
   {
     TYearRanges ranges;

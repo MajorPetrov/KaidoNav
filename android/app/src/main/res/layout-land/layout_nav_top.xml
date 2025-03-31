@@ -56,7 +56,7 @@
         android:layout_marginTop="@dimen/nav_next_turn_top"
         android:layout_marginBottom="@dimen/nav_next_turn_space"
         android:layout_gravity="center_horizontal">
-        <app.organicmaps.widget.ArrowView
+        <app.kaidonav.widget.ArrowView
           android:id="@+id/turn"
           android:theme="?navigationTheme"
           android:layout_width="@dimen/nav_next_turn_sign"
@@ -106,7 +106,7 @@
     </FrameLayout>
   </RelativeLayout>
 
-  <app.organicmaps.widget.LanesView
+  <app.kaidonav.widget.LanesView
       android:id="@+id/lanes"
       android:layout_width="0dp"
       android:layout_height="68dp"
@@ -123,7 +123,7 @@
       app:lanesEditModeLanesCount="10"
       tools:visibility="visible" />
 
-  <app.organicmaps.widget.SpeedLimitView
+  <app.kaidonav.widget.SpeedLimitView
     android:id="@+id/nav_speed_limit"
     style="@style/MwmWidget.SpeedLimit"
     android:layout_width="60dp"

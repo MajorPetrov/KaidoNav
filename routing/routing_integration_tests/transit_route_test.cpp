@@ -58,7 +58,7 @@ UNIT_TEST(Transit_Piter_FrunzenskyaToPlochadVosstaniya)
                                   mercator::FromLatLon(59.93096, 30.35872));
   TEST_EQUAL(routeResult.second, RouterResultCode::NoError, ());
 
-  /// @todo Check https://github.com/organicmaps/organicmaps/issues/1669 for details.
+  /// @todo Check https://github.com/kaidonav/kaidonav/issues/1669 for details.
   integration::TestRouteLength(*routeResult.first, 5837.21);
 
   TEST(routeResult.first, ());

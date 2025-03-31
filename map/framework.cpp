@@ -2698,7 +2698,7 @@ bool Framework::ParseDrapeDebugCommand(string const & query)
 #if defined(OMIM_OS_ANDROID)
     if (m_drapeEngine->GetApiVersion() == dp::ApiVersion::Vulkan)
     {
-      // See comment in android/jni/app/organicmaps/Framework.cpp Framework::MarkMapStyle().
+      // See comment in android/jni/app/kaidonav/Framework.cpp Framework::MarkMapStyle().
       SetMapStyle(desiredStyle);
     }
     else

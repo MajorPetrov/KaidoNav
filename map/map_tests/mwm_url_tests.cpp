@@ -36,7 +36,7 @@ UNIT_TEST(MapApiSmoke)
   TEST_EQUAL(p0.m_id, "", ());
   TEST_EQUAL(p0.m_style, "black", ());
   TEST_ALMOST_EQUAL_ABS(test.GetZoomLevel(), 17.0, kEps, ());
-  TEST_EQUAL(test.GetGlobalBackUrl(), "https://organicmaps.app", ());
+  TEST_EQUAL(test.GetGlobalBackUrl(), "https://kaidonav.app", ());
 }
 
 UNIT_TEST(RouteApiSmoke)

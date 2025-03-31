@@ -367,7 +367,7 @@ UNIT_CLASS_TEST(VehicleModelTest, BicycleModel_Speeds)
     {path, unpavedGood}, // Its controversial what is preferrable: a good path or a bad cycleway
     {path, yesBicycle, unpavedBad},
     /// @todo(pastk): "nobicycle" is ignored in speed calculation atm, the routing is just forbidden there.
-    /// But "nobicycle" should result in a dismount speed instead, see https://github.com/organicmaps/organicmaps/issues/9784
+    /// But "nobicycle" should result in a dismount speed instead, see https://github.com/kaidonav/kaidonav/issues/9784
     // {footway, c.GetTypeByPath({"hwtag", "nobicycle"})},
     // {path, c.GetTypeByPath({"hwtag", "nobicycle"})},
     {path, unpavedBad},

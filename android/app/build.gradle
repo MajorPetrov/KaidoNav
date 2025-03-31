@@ -22,7 +22,7 @@ buildscript {
       googleFirebaseServicesDefault
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:8.7.3'
+    classpath 'com.android.tools.build:gradle:8.9.0'
 
     if (googleFirebaseServicesEnabled) {
       println('Building with Google Firebase Services')
@@ -80,8 +80,8 @@ def getCommitMessage() {
 
 def osName = System.properties['os.name'].toLowerCase()
 
-project.ext.appId = 'app.organicmaps'
-project.ext.appName = 'Organic Maps'
+project.ext.appId = 'app.kaidonav'
+project.ext.appName = 'Kaidō Nav'
 
 // I have Java 21 installed, but this doesn't work on MacOS.
 //java {
@@ -91,7 +91,7 @@ project.ext.appName = 'Organic Maps'
 //}
 
 android {
-  namespace 'app.organicmaps'
+  namespace 'app.kaidonav'
 
   buildFeatures {
     dataBinding = true
@@ -103,7 +103,7 @@ android {
   ndkVersion '27.2.12479018'
 
   defaultConfig {
-    // Default package name is taken from the manifest and should be app.organicmaps
+    // Default package name is taken from the manifest and should be app.kaidonav
     def ver = getVersion()
     versionCode = ver.V1
     versionName = ver.V2
@@ -112,7 +112,7 @@ android {
     minSdk propMinSdkVersion.toInteger()
     targetSdk propTargetSdkVersion.toInteger()
     applicationId project.ext.appId
-    buildConfigField 'String', 'SUPPORT_MAIL', '"android@organicmaps.app"'
+    buildConfigField 'String', 'SUPPORT_MAIL', '"android@kaidonav.app"'
     // Should be customized in flavors.
     buildConfigField 'String', 'REVIEW_URL', '""'
     resourceConfigurations += [project.ext.supportedLocalizations]
@@ -143,7 +143,7 @@ android {
                   "-DOS=$osName", '-DSKIP_TESTS=ON', '-DSKIP_TOOLS=ON', "-DUSE_PCH=$pchFlag",
                   "-DNJOBS=$njobs", "-DENABLE_VULKAN_DIAGNOSTICS=$enableVulkanDiagnostics",
                   "-DENABLE_TRACE=$enableTrace"
-        targets 'organicmaps'
+        targets 'kaidonav'
       }
     }
 
@@ -183,29 +183,29 @@ android {
     google {
       dimension 'default'
       versionName = android.defaultConfig.versionName + '-Google'
-      buildConfigField 'String', 'SUPPORT_MAIL', '"googleplay@organicmaps.app"'
-      buildConfigField 'String', 'REVIEW_URL', '"market://details?id=app.organicmaps"'
+      buildConfigField 'String', 'SUPPORT_MAIL', '"googleplay@kaidonav.app"'
+      buildConfigField 'String', 'REVIEW_URL', '"market://details?id=app.kaidonav"'
     }
 
     web {
       dimension 'default'
       applicationIdSuffix '.web'
       versionName = android.defaultConfig.versionName + '-Web'
-      buildConfigField 'String', 'SUPPORT_MAIL', '"apk@organicmaps.app"'
+      buildConfigField 'String', 'SUPPORT_MAIL', '"apk@kaidonav.app"'
     }
 
     fdroid {
       dimension 'default'
       versionName = android.defaultConfig.versionName + '-FDroid'
-      buildConfigField 'String', 'SUPPORT_MAIL', '"fdroid@organicmaps.app"'
+      buildConfigField 'String', 'SUPPORT_MAIL', '"fdroid@kaidonav.app"'
     }
 
     huawei {
       dimension 'default'
       versionName = android.defaultConfig.versionName + '-Huawei'
       versionCode = HUAWEI_VERSION_CODE_BASE + android.defaultConfig.versionCode
-      buildConfigField 'String', 'SUPPORT_MAIL', '"huawei@organicmaps.app"'
-      buildConfigField 'String', 'REVIEW_URL', '"appmarket://details?id=app.organicmaps"'
+      buildConfigField 'String', 'SUPPORT_MAIL', '"huawei@kaidonav.app"'
+      buildConfigField 'String', 'REVIEW_URL', '"appmarket://details?id=app.kaidonav"'
     }
   }
 
@@ -241,7 +241,7 @@ android {
     android.applicationVariants.all { variant ->
       def task = variant.name.capitalize()
       project.task(type: Exec, "run${task}", dependsOn: "install${task}") {
-        commandLine android.getAdbExe(), 'shell', 'am', 'start', '-n', "$applicationId/app.organicmaps.DownloadResourcesActivity", '-a', 'android.intent.action.MAIN', '-c', 'android.intent.category.LAUNCHER'
+        commandLine android.getAdbExe(), 'shell', 'am', 'start', '-n', "$applicationId/app.kaidonav.DownloadResourcesActivity", '-a', 'android.intent.action.MAIN', '-c', 'android.intent.category.LAUNCHER'
       }
     }
   }
@@ -279,7 +279,7 @@ android {
       jniDebuggable true           // Enable jni debug build
       zipAlignEnabled true
       signingConfig signingConfigs.debug
-      resValue 'string', 'app_name', 'Debug Organic Maps'
+      resValue 'string', 'app_name', 'Debug Kaidō Nav'
       // Do not generate separate debug symbols for debug apps, because we don't distribute them.
       ndk.debugSymbolLevel = 'none'
 
@@ -320,7 +320,7 @@ android {
       // To learn more, go to the documentation section about R8 configuration files.
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
       matchingFallbacks = ['debug', 'release']
-      resValue 'string', 'app_name', 'Beta Organic Maps'
+      resValue 'string', 'app_name', 'Beta Kaidō Nav'
       // Full size symbols are too big for Google, 217mb aab vs 95mb.
       ndk.debugSymbolLevel = 'symbol_table'
 
@@ -367,11 +367,11 @@ dependencies {
 
   // Google Play Location Services
   //
-  // Please add symlinks to google/java/app/organicmaps/location for each new gms-enabled flavor below:
+  // Please add symlinks to google/java/app/kaidonav/location for each new gms-enabled flavor below:
   // ```
-  // mkdir -p src/$flavor/java/app/organicmaps/
-  // ln -sf ../../../../google/java/app/organicmaps/location src/$flavor/java/app/organicmaps/
-  // ls -la src/$flavor/java/app/organicmaps/location/GoogleFusedLocationProvider.java
+  // mkdir -p src/$flavor/java/app/kaidonav/
+  // ln -sf ../../../../google/java/app/kaidonav/location src/$flavor/java/app/kaidonav/
+  // ls -la src/$flavor/java/app/kaidonav/location/GoogleFusedLocationProvider.java
   // ```
   //
   webImplementation 'com.google.android.gms:play-services-location:21.3.0'
@@ -408,7 +408,7 @@ dependencies {
   implementation 'androidx.work:work-runtime:2.10.0'
   implementation 'androidx.lifecycle:lifecycle-process:2.8.7'
   implementation 'com.google.android.material:material:1.12.0'
-  // Fix for app/organicmaps/util/FileUploadWorker.java:14: error: cannot access ListenableFuture
+  // Fix for app/kaidonav/util/FileUploadWorker.java:14: error: cannot access ListenableFuture
   // https://github.com/organicmaps/organicmaps/issues/6106
   implementation 'com.google.guava:guava:33.3.0-android'
   implementation 'com.github.devnullorthrow:MPAndroidChart:3.2.0-alpha'
